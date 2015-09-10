@@ -1,0 +1,122 @@
+<div class="col-md-12">
+	<div class="panel panel-default" style="margin-bottom: 4px;">
+        <div class="panel-heading" style="height:80px; padding:18px;" >
+          <div class="clearfix col-md-12">
+           
+            <div class="clear" style="text-align:center;">
+              <div class="h2 m-t-xs m-b-xs">
+                Github Issues
+              </div>
+              
+            </div>
+          </div>
+          
+        </div>
+      </div>
+	
+  <div class="panel panel-default" style="margin-bottom: 4px;">
+       
+        <div class="panel-body" style="height:500px; overflow-y:scroll">
+          <div class="m-b col-md-9" style="text-align:center">
+            <div class="input-group m-b" style="height:45px">
+              <span class="input-group-addon">https://github.com/</span>
+              <input style="height:45px" type="text" class="form-control" ng-model = "url" placeholder="append your repo url">
+            </div>
+          </div>
+
+            <div class="col-md-3">
+              <button style="width:100%" class="btn btn-primary btn-addon btn-lg" ng-click="retrievedata(url)"><i class="fa fa-code"></i>Get Issues</button>
+              
+            </div>
+          <div class="col-lg-12" ng-show="loading == 'processing'" style="text-align:center">
+            <img src="img/Loading1.gif" height="250px">
+          </div>
+          <div class="col-lg-12" ng-show="loading == 'error'" style="text-align:center">
+            <h2>Error - Repository doesn't exists or check your internet connection</h2>
+          </div>
+          <div ng-show="loading == 'done'" class="col-lg-12">
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="clearfix text-center m-t">
+                  <div class="inline">
+                    
+                      <div class="thumb-xl">
+                        <img src="{{repo.owner.avatar_url}}" height="80px" class="img-circle" alt="...">
+                      </div>
+                    
+                    <div class="h4 m-t m-b-xs">{{repo.owner.login}}</div>
+                    <small class="text-muted m-b">{{repo.description}}</small>
+                  </div>                      
+                </div>
+              </div>
+              <footer class="panel-footer bg-info text-center no-padder">
+                <div class="row no-gutter">
+                  <div class="col-xs-3">
+                    <div class="wrapper">
+                      <span class="m-b-xs h3 block text-white">{{till_24_hours}}</span>
+                      <small class="text-muted">Last 24 Hours</small>
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                    <div class="wrapper">
+                      <span class="m-b-xs h3 block text-white">{{till_7_days - till_24_hours}}</span>
+                      <small class="text-muted">Beyond 24 Hours to 7 Days</small>
+                    </div>
+                  </div>
+                  <div class="col-xs-3">
+                    <div class="wrapper">
+                      <span class="m-b-xs h3 block text-white">{{repo.open_issues_count - till_7_days}}</span>
+                      <small class="text-muted">Beyond 7 days</small>
+                    </div>
+                  </div>
+                   <div class="col-xs-3">
+                    <div class="wrapper">
+                      <span class="m-b-xs h3 block text-white">{{repo.open_issues_count}}</span>
+                      <small class="text-muted">Total</small>
+                    </div>
+                  </div>
+                </div>
+              </footer>
+            </div>
+
+
+            <div class="col-sm-12">
+              <div class="panel b-a">
+                <div class="panel-heading b-b b-light">
+                  <span class="badge bg-warning pull-right">{{issues.data.length}}</span>
+                  <a href class="font-bold">Issues (Last 7 Days)</a>
+                </div>
+                <ul class="list-group list-group-lg no-bg auto" ng-repeat="issue in issues">
+                  <li class="list-group-item clearfix" ng-repeat="issu in issue">
+                    <span class="pull-left thumb-sm avatar m-r">
+                      <img src="{{issu.user.avatar_url}}" alt="...">
+                      <i class="on b-white bottom"></i>
+                    </span>
+                    <span class="clear">
+                      <span>{{issu.user.login}}
+                        
+                      </span>
+                      <small class="text-muted clear">{{issu.body}}</small>
+                    </span>
+                    <span style="position:absolute; top:5px; right:10px">
+                       <small class="text-muted clear">{{issu.updated_at}}</small>
+                    </span>
+                  </li>
+                  
+                </ul>
+               
+              </div>       
+            </div>
+          </div>
+
+
+          
+                                    
+        </div>
+        
+
+    </div>
+	   
+	    </div>
+	  </div>
+</div>

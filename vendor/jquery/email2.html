@@ -1,0 +1,957 @@
+<div class="wrapper" style="padding:8px; height:610px">
+  <div class="row">
+    <div class="col-md-12" ng-controller="EmailSettingsCtrl" >
+       <div class="col-md-12" style="height: 590px; background-color:#1C2B36; border-right : 2px solid #F0F3F4" >
+        <div class="col-sm-3 " style="float:right; position:absolute; right:0px;  z-index:9999"> 
+            <table>
+              <tr>
+                <td>
+                  <span class="text-white m-t">Select Campaign : </span>
+                </td>
+                <td style="padding-top:15px;">
+                  <div class="padder-xs">
+                    <select name="account" class="form-control m-b">
+                      <option value="arial">Camp 1</option>
+                      <option value="helvetica">Camp 2</option>
+                    </select>
+                  </div> 
+                </td>
+              </tr>
+            </table>
+                   
+       
+        </div>
+
+        <div class="col-md-12" style="">
+        <ul class="tabs">
+        <li>
+        <input type="radio" name="tabs" id="tab1" checked />
+        <label  style="position:absolute; left:-2px" for="tab1" class="text-white">Subscription E-mail</label>
+              <div id="tab-content1" class="tab-contentdata" style="text-align:center; height:500px; padding-bottom:5px">
+                <div class="col-md-12" class=""> 
+                  
+                      <div class="form-group">
+                <div >
+                <div class="col-sm-3" style="text-align:center; height:590px">
+
+
+                  <br /><br />
+
+                 
+
+<div id="navbar" style="color:white; height:160px">
+
+                 <ul>
+
+                  <li class="m-b m-t" ng-model="email.template1">
+                  
+                  Template 1<span class="caret"></span>
+                  
+                  <ul style="float:left">
+                   
+                   <li style="float:left" ng-model="email.template2">Template 2</li>
+                   <li style="float:left" ng-model="email.template3">Template 3</li>
+                  </ul>
+                   
+                  </li>
+                  </ul>
+                  
+                  </div>
+                  
+                  
+
+                  <br />
+                  
+                  <div>
+                  <form>
+                  Name: <br /><input class="form-control m-t-sm" type="text" name="name" style="background-color:white; text-align:center" width="100" placeholder="My name is" /> <br /><br />
+                  Subject: <br /><input class="form-control  m-t-sm" width="100" style="background-color:white; text-align:center" placeholder="Write your subject here" /> <br /><br />
+                  <button class="btn btn-default btn-lg" type="submit" style="color:black">Submit</button>
+                  </form>
+                  </div>
+
+                </div>
+
+                
+                <div class="col-sm-9" text-align:"center" >
+
+                <!--
+                  <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">
+                    <div class="btn-group dropdown" dropdown>
+                      <a class="btn btn-default" dropdown-toggle tooltip="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li> 
+                        <li><a href data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li>
+                        <li><a href data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li></ul>
+                    </div>
+                    <div class="btn-group dropdown" dropdown>
+                      <a class="btn btn-default" dropdown-toggle data-toggle="dropdown" tooltip="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href data-edit="fontSize 5" style="font-size:24px">Huge</a></li>
+                        <li><a href data-edit="fontSize 3" style="font-size:18px">Normal</a></li>
+                        <li><a href data-edit="fontSize 1" style="font-size:14px">Small</a></li>
+                      </ul>
+                    </div>
+                    <div class="btn-group">
+                      <a class="btn btn-default" data-edit="bold" tooltip="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                      <a class="btn btn-default" data-edit="italic" tooltip="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                      <a class="btn btn-default" data-edit="strikethrough" tooltip="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                      <a class="btn btn-default" data-edit="underline" tooltip="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                    </div>
+                    <div class="btn-group">
+                      <a class="btn btn-default" data-edit="insertunorderedlist" tooltip="Bullet list"><i class="fa fa-list-ul"></i></a>
+                      <a class="btn btn-default" data-edit="insertorderedlist" tooltip="Number list"><i class="fa fa-list-ol"></i></a>
+                      <a class="btn btn-default" data-edit="outdent" tooltip="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                      <a class="btn btn-default" data-edit="indent" tooltip="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                    </div>
+                    <div class="btn-group">
+                      <a class="btn btn-default" data-edit="justifyleft" tooltip="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                      <a class="btn btn-default" data-edit="justifycenter" tooltip="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                            <a class="btn btn-default" data-edit="justifyright" tooltip="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                      <a class="btn btn-default" data-edit="justifyfull" tooltip="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                    </div>
+                    <div class="btn-group dropdown" dropdown>
+                      <a class="btn btn-default" dropdown-toggle tooltip="Hyperlink"><i class="fa fa-link"></i></a>
+                      <div class="dropdown-menu">
+                        <div class="input-group m-l-xs m-r-xs">
+                          <input class="form-control input-sm" id="LinkInput" placeholder="URL" type="text" data-edit="createLink"/>
+                          <div class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">Add</button>
+                          </div>
+                        </div>
+                      </div>
+                      <a class="btn btn-default" data-edit="unlink" tooltip="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                    </div>
+                    
+                    <div class="btn-group">
+                      <a class="btn btn-default" tooltip="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                      <input type="file" data-edit="insertImage" style="position:absolute; opacity:0; width:41px; height:34px" />
+                    </div>
+                   
+                  </div>  -->
+
+              <!-- froala editor -->
+
+
+                 
+<iframe src="tpl/testemail2.html" width="800" height="300" >
+                  </iframe>
+                  
+
+             
+                </div>
+                
+              </div>
+              
+          </div>
+
+
+        </div>
+         
+          
+        
+        </div>
+        
+
+
+
+        
+        </li>
+  
+        <li>
+        <input type="radio" name="tabs" id="tab2" />
+        <label for="tab2" style="position:absolute; left:147px">Instant Reward E-mail</label>
+        
+          <div id="tab-content2" class="tab-contentdata" style="text-align:center;  height:500px; padding-bottom:5px">
+                <div class="col-md-12" class=""> 
+                  
+                      <div class="form-group">
+                <div >
+                <div class="col-sm-3" style="text-align:center">
+
+                  <br /><br />
+
+                 
+
+<div id="navbar" style="color:white; height:160px">
+
+                 <ul>
+
+                  <li class="m-b m-t" ng-model="email.template1">
+                  
+                  Template 1<span class="caret"></span>
+                  
+                  <ul style="float:left">
+                   
+                   <li style="float:left" ng-model="email.template2">Template 2</li>
+                   <li style="float:left" ng-model="email.template3">Template 3</li>
+                  </ul>
+                   
+                  </li>
+                  </ul>
+                  
+                  </div>
+                  
+                  
+
+                  <br />
+                  
+                  <div>
+                  <form>
+                  Name: <br /><input class="form-control m-t-sm" type="text" name="name" style="background-color:white; text-align:center" width="100" placeholder="My name is" /> <br /><br />
+                  Subject: <br /><input class="form-control  m-t-sm" width="100" style="background-color:white; text-align:center" placeholder="Write your subject here" /> <br /><br />
+                  <button class="btn btn-default btn-lg" type="submit" style="color:black">Submit</button>
+                  </form>
+                  </div>
+
+                </div>
+
+                <div class="col-sm-9" text-align:"center">
+
+                 
+                 
+                <!--
+
+                  <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">
+                    <div class="btn-group dropdown" dropdown>
+                      <a class="btn btn-default" dropdown-toggle tooltip="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li> 
+                        <li><a href data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li>
+                        <li><a href data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li></ul>
+                    </div>
+                    <div class="btn-group dropdown" dropdown>
+                      <a class="btn btn-default" dropdown-toggle data-toggle="dropdown" tooltip="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href data-edit="fontSize 5" style="font-size:24px">Huge</a></li>
+                        <li><a href data-edit="fontSize 3" style="font-size:18px">Normal</a></li>
+                        <li><a href data-edit="fontSize 1" style="font-size:14px">Small</a></li>
+                      </ul>
+                    </div>
+                    <div class="btn-group">
+                      <a class="btn btn-default" data-edit="bold" tooltip="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                      <a class="btn btn-default" data-edit="italic" tooltip="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                      <a class="btn btn-default" data-edit="strikethrough" tooltip="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                      <a class="btn btn-default" data-edit="underline" tooltip="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                    </div>
+                    <div class="btn-group">
+                      <a class="btn btn-default" data-edit="insertunorderedlist" tooltip="Bullet list"><i class="fa fa-list-ul"></i></a>
+                      <a class="btn btn-default" data-edit="insertorderedlist" tooltip="Number list"><i class="fa fa-list-ol"></i></a>
+                      <a class="btn btn-default" data-edit="outdent" tooltip="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                      <a class="btn btn-default" data-edit="indent" tooltip="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                    </div>
+                    <div class="btn-group">
+                      <a class="btn btn-default" data-edit="justifyleft" tooltip="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                      <a class="btn btn-default" data-edit="justifycenter" tooltip="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                            <a class="btn btn-default" data-edit="justifyright" tooltip="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                      <a class="btn btn-default" data-edit="justifyfull" tooltip="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                    </div>
+                    <div class="btn-group dropdown" dropdown>
+                      <a class="btn btn-default" dropdown-toggle tooltip="Hyperlink"><i class="fa fa-link"></i></a>
+                      <div class="dropdown-menu">
+                        <div class="input-group m-l-xs m-r-xs">
+                          <input class="form-control input-sm" id="LinkInput" placeholder="URL" type="text" data-edit="createLink"/>
+                          <div class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">Add</button>
+                          </div>
+                        </div>
+                      </div>
+                      <a class="btn btn-default" data-edit="unlink" tooltip="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                    </div>
+                    
+                    <div class="btn-group">
+                      <a class="btn btn-default" tooltip="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                      <input type="file" data-edit="insertImage" style="position:absolute; opacity:0; width:41px; height:34px" />
+                    </div>
+                   
+                  </div>
+
+                  -->
+
+                  <section id="editor">
+                  <div id="edit1">
+
+                 <div class="reset" style="overflow-y:auto;height: 475px; margin-left:-10px; border:0px; background-color:white; ">
+                      
+                    
+                          
+
+                          
+                                <div style="background-color:white; border-top:2px solid white">
+                                <!-- Social Icons -->
+                                <table border="0" cellpadding="0" cellspacing="0" align="left" style="background-color:white; border:0px" class=" reset">
+                                  <tr class="reset">
+                                    <td style="background-color:white; border:0px">
+                                      <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/social-twitter.jpg" width="40" height="33" border="0" alt="Twitter" style="display:block; border:none; outline:none; text-decoration:none; background-color:white;" />
+                                      </a>
+                                    </td>
+                                    <td style="border:0px">
+                                      <a href="#" target="_blank" style="text-decoration: none">
+                                        <img src="tpl/files/images/social-facebook.jpg" width="40" height="33" border="0" alt="Facebook" style="display:block; border:none; outline:none; text-decoration:none; background-color:white;" />
+                                      </a>
+                                    </td>
+                                    <td style="border:0px">
+                                      <a href="#" target="_blank" style="text-decoration: none">
+                                        <img src="tpl/files/images/social-skype.jpg" width="40" height="33" border="0" alt="Skype" style="display:block; border:none; outline:none; text-decoration:none; background-color:white;" />
+                                      </a>
+                                    </td>
+                                    <td style="border:0px">
+                                      <a href="#" target="_blank" style="text-decoration: none">
+                                        <img src="tpl/files/images/social-google.jpg" width="40" height="33" border="0" alt="Google" style="display:block; border:none; outline:none; text-decoration:none; background-color:white" />
+                                      </a>
+                                    </td>
+                                 <!--   <td>
+                                      <img src="tpl/files/images/social-last.jpg" width="1" height="43" border="0" alt="" style="display:block; border:none; outline:none; text-decoration:none; background-color:#402d2d;" />
+                                    </td>
+
+                                    -->
+
+                                  </tr>                         
+                                </table>
+                                </div>
+                                <!-- End of Social Icons -->
+
+                                <!-- PreHeader -->
+
+
+                                <!-- End of PreHeader -->
+
+                                
+                             
+                      
+                      
+                      
+                      
+                      <div style="background-color:#e1dcdc;">
+
+                      <table class="reset resetagain" width="600" border="0" cellpadding="0" cellspacing="0" align="center">
+                        <tr top=80px left=10px>
+                          
+                          
+
+                          <td width="600" height="100%" valign="top" background-color="#909090" style="color:#fffff; font-size:25px; text-align:center; top:80px; left:10px; border:0px"> <br /><p style="float:left;border:0px; font-size:30px;font-weight:bold; padding-left:25px; color:black;">Thank you for sharing <br />for us<br />
+                         
+                          </p>
+</div>
+                         <img src="tpl/files/images/logo.png" style="width:220px; left:10px; height:120px;" /> &nbsp; 
+                          <table class="reset" border="0" cellpadding="0" cellspacing="0" align="center">
+                           
+                            <tr>
+                              <td width="600" float="left" style="border:0px">
+                                
+
+                                <table width="560" border="0" cellpadding="0" cellspacing="0" align="center" class="reset" style="border:0px">
+                                  <tr>
+                                    <td width="100%"  style="font-size:15px; color:black;border:0px; text-align:center;"> 
+                                    <h3>   
+                                    You have won <br /> reward for your share
+                                    </h3>
+                                    
+
+                                          
+
+                                      <!-- Image -->
+                                      
+                                      <!-- End of Image -->
+                                                      
+                                      <!-- Padding 20px -->
+                                     
+                                      <!-- End of Padding 20px -->
+
+                                      <!-- Text Section -->
+                                      <table width="200" border="0" cellpadding="0" cellspacing="0" align="left">
+                                        <tr>
+                                          <td width="100%" style="font-size: 15px; border:0px; color: #ffff; text-align: left; font-weight: bold; font-family: 'Open Sans', Helvetica, Arial, sans-serif; line-height: 20px;">
+                                          
+
+                                           <div style="background-color:white; padding:15px; width:600px ; height: 320px; color:#4d3759; float:left;">
+                                           
+                    
+                                     
+                                           
+                                           
+                                           <div style="width:570px; height:290px; background-color:white; padding:5px; z-index:1; border:8px solid black; ">
+                                           
+                                           <div align="center">
+                                          <table class="reset" width="100%" style= "text-align:center;">
+                                          <tr>
+                                           
+                                           <td colspan="3" align="center" style="color:#00b7d5; border:0px; padding:6px; text-align:center; font-weight:bold"><h1>Enjoy </h1></td>
+                                           
+                                           </tr>
+                                          
+                                          <tr>
+                                         
+                                          
+                                           <td  style="color:#00b7d5; padding:6px; border:0px; text-align:right; "><h1>20% OFF </h1></td>
+                                           <td  style="color:#00b7d5; padding:6px; border:0px; text-align:left;"><h3> your entire <br />purchase</h3></td>
+
+
+                                           </tr>
+                                           </table>
+                                           </div>
+
+                                           <h4 style="color:black; padding:4px; line-height:30px;">&nbsp; &nbsp; &nbsp; &nbsp;Use code { xyz123 } on your next order<br />&nbsp; &nbsp; &nbsp; &nbsp;Discount offer is available upto { 1/1/2001 } </h4>
+                                           </div>
+                                           
+                                           
+                                
+
+                                          </div>
+                                          
+                                          </td>
+                                          
+                                          
+                                        </tr>
+                                        <tr>
+                                        <td style="border:0px">
+                                        <p style="text-align:center; border:0px; font-size:25px; font-weight:bold;">Your friend will get 10% discount using your link.
+                                             <br />This is your Referral link {{  }}</p>
+                                        </td>
+                                        </tr>
+                                        <tr><td width="100%" height="20" style="font-size: 20;border:0px; line-height: 0;border-collapse: collapse;"><br />
+                                        <div align="center">
+
+                                          <br /><button style="background-color:#040718; color:white;border:0px; padding:3px; left:300px; height:50px; align:"center"; ">SHOP NOW!</button>
+                                          <br /><br />
+
+                                          </div>
+
+
+</td></tr>
+                                        <tr>
+                                        <td align="left" style="border:0px">
+                                        <br /><br />
+                                         <h3>Hurry up before offer lasts.<br />
+                                          Happy shopping.</h3>
+
+                                        </td>
+                                        <tr>
+                                        <td style="float:right; border:0px; height:80px">
+                                           <div style="width:160px; height:30px; padding:1px; font-size:18px">Follow us on
+                                           <table class="reset" cellpadding="2" style="float:right ">
+                                          <tr>
+                                          
+                                          <td style="padding:1px; border:0px">
+                                          <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/Google.png" width="20" height="20" border="0" alt="Twitter" style="display:block; border:none; outline:none; text-decoration:none" />
+                                      </a>
+                                      </td>
+
+                                      <td style="padding:1px; border:0px">
+
+                                      <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/twit.png" width="20" height="20" border="1" alt="Twitter" style="display:block; outline:none; text-decoration:none" />
+                                      </a>
+
+                                      </td>
+
+                                      <td style="padding:1px; border:0px">
+                                      <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/fb.png" width="20" height="20" border="0" alt="Twitter" style="display:block; border:none; outline:none; text-decoration:none;" />
+                                      </a>
+
+                                       </td>
+                                       </tr>
+
+                                       </table>
+
+
+                                           </div>
+                                          <br />
+                                          </td>
+                                          </tr>
+                                         
+
+                                         
+
+                                          
+                                          </tr>
+                                         
+                                         
+                                        
+
+                                      </table>
+                                </table>
+                                
+                              </td>
+                            </tr>
+                            <tr align="left" style="margin-left:-20px">
+                            <td width="600" height="25" style="font-size: 25; float:left; margin-left:-10px ; line-height: 0;border:0px; border-collapse: collapse;">&nbsp;
+                            
+                                        <div align="left" style="background-color:#0b0000; height:120px;border:0px; width:700px; line-height:60px; padding:20px; padding-bottom:20px;">
+                             <h5 style="color:white; align:left; ">Terms and Conditions:<br />
+                             1) Use coupon code before expiry.<br />
+                             2) Any malpractices used may disregard your offer.<br />
+                             <br />
+                             To unsubscribe this email <span style="color:blue;">UNSUBSCRIBE<br /><br /><br /><br /></span>
+                             </h5> </div>
+                             <br />
+                                          
+                            </td></tr>           
+                          </table>
+                        </td>
+                      </tr>
+                      </table>
+
+                     
+
+                  </div>
+
+                   </div>
+                </section>
+
+                 <script>
+
+$(function(){
+$('#edit1').editable({
+inlineMode: false
+})
+});
+
+</script>
+
+<script>
+
+$(function(){
+
+$('#edit1').editable({
+
+autosave: false, // Enable autosave option. Enabling autosave helps preventing data loss.
+
+autosaveInterval: 1000, // Time in milliseconds to define when the autosave should be triggered.
+
+saveURL: null, // Defines where to post the data when save is triggered. The editor will initialize a POST request to the specified URL passing the editor content in the body parameter of the HTTP request.
+
+blockTags: ["n", "p", "blockquote", "pre", "h1", "h2", "h3", "h4", "h5", "h6"], // Defines what tags list to format a paragraph and their order.
+
+borderColor: "#252528", // Customize the appearance of the editor by changing the border color.
+
+buttons: ["bold", "italic", "underline", "strikeThrough", "fontSize", "color", "sep", "formatBlock", "align", "insertOrderedList", "insertUnorderedList", "outdent", "indent", "sep", "selectAll", "createLink", "insertImage", "undo", "redo", "html"], // Defines the list of buttons that are available in the editor.
+
+crossDomain: false, // Make AJAX requests using CORS.
+
+direction: "ltr", // Sets the direction of the text.
+
+editorClass: "", // Set a custom class for the editor element.
+
+height: "auto", // Set a custom height for the editor element.
+
+imageMargin: 20, // Define a custom margin for image. It will be visible on the margin of the image when float left or right is active.
+
+imageErrorCallback: false,
+
+imageUploadParam: "file", // Customize the name of the param that has the image file in the upload request.
+
+imageUploadURL: "http://uploads.im/api", // A custom URL where to save the uploaded image.
+
+inlineMode: true, // Enable or disable inline mode.
+
+placeholder: "Type something", // Set a custom placeholder to be used when the editor body is empty.
+
+shortcuts: true, // Enable shortcuts. The shortcuts are visible when you hover a button in the editor.
+
+spellcheck: false, // Enables spellcheck.
+
+typingTimer: 250,
+width: "auto" // Set a custom width for the editor element.
+
+})
+
+});
+</script>
+
+
+                </div>
+         
+
+              </div>
+              
+          </div>
+
+
+        </div>
+         
+         
+          
+        </div>
+       
+                
+        
+         </li>
+
+         <li>
+        <input type="radio" name="tabs" id="tab3" />
+        <label for="tab3" style="position:absolute; left:312px">Friend's Offer E-mail</label>
+        <div id="tab-content3" class="tab-contentdata" style="text-align:center">
+                <div class="col-md-12" class=""> 
+                  
+                      <div class="form-group">
+                <div >
+                <div class="col-sm-3" style="text-align:center">
+
+                  <br /><br />
+
+                 
+
+<div id="navbar" style="color:white; height:160px">
+
+                 <ul>
+
+                  <li class="m-b m-t" ng-model="email.template1">
+                  
+                  Template 1<span class="caret"></span>
+                  
+                  <ul style="float:left">
+                   
+                   <li style="float:left" ng-model="email.template2">Template 2</li>
+                   <li style="float:left" ng-model="email.template3">Template 3</li>
+                  </ul>
+                   
+                  </li>
+                  </ul>
+                  
+                  </div>
+                  
+                  
+
+                  <br />
+                  
+                  <div>
+                  <form>
+                  Name: <br /><input class="form-control m-t-sm" type="text" name="name" style="background-color:white; text-align:center" width="100" placeholder="My name is" /> <br /><br />
+                  Subject: <br /><input class="form-control  m-t-sm" width="100" style="background-color:white; text-align:center" placeholder="Write your subject here" /> <br /><br />
+                  <button class="btn btn-default btn-lg" type="submit" style="color:black">Submit</button>
+                  </form>
+                  </div>
+
+                </div>
+
+                <div class="col-sm-9" text-align:"center">
+                <!--
+                  <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">
+                    <div class="btn-group dropdown" dropdown>
+                      <a class="btn btn-default" dropdown-toggle tooltip="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li> 
+                        <li><a href data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li>
+                        <li><a href data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li></ul>
+                    </div>
+                    <div class="btn-group dropdown" dropdown>
+                      <a class="btn btn-default" dropdown-toggle data-toggle="dropdown" tooltip="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                      <ul class="dropdown-menu">
+                        <li><a href data-edit="fontSize 5" style="font-size:24px">Huge</a></li>
+                        <li><a href data-edit="fontSize 3" style="font-size:18px">Normal</a></li>
+                        <li><a href data-edit="fontSize 1" style="font-size:14px">Small</a></li>
+                      </ul>
+                    </div>
+                    <div class="btn-group">
+                      <a class="btn btn-default" data-edit="bold" tooltip="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                      <a class="btn btn-default" data-edit="italic" tooltip="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                      <a class="btn btn-default" data-edit="strikethrough" tooltip="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                      <a class="btn btn-default" data-edit="underline" tooltip="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                    </div>
+                    <div class="btn-group">
+                      <a class="btn btn-default" data-edit="insertunorderedlist" tooltip="Bullet list"><i class="fa fa-list-ul"></i></a>
+                      <a class="btn btn-default" data-edit="insertorderedlist" tooltip="Number list"><i class="fa fa-list-ol"></i></a>
+                      <a class="btn btn-default" data-edit="outdent" tooltip="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                      <a class="btn btn-default" data-edit="indent" tooltip="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                    </div>
+                    <div class="btn-group">
+                      <a class="btn btn-default" data-edit="justifyleft" tooltip="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                      <a class="btn btn-default" data-edit="justifycenter" tooltip="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                            <a class="btn btn-default" data-edit="justifyright" tooltip="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                      <a class="btn btn-default" data-edit="justifyfull" tooltip="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                    </div>
+                    <div class="btn-group dropdown" dropdown>
+                      <a class="btn btn-default" dropdown-toggle tooltip="Hyperlink"><i class="fa fa-link"></i></a>
+                      <div class="dropdown-menu">
+                        <div class="input-group m-l-xs m-r-xs">
+                          <input class="form-control input-sm" id="LinkInput" placeholder="URL" type="text" data-edit="createLink"/>
+                          <div class="input-group-btn">
+                            <button class="btn btn-sm btn-default" type="button">Add</button>
+                          </div>
+                        </div>
+                      </div>
+                      <a class="btn btn-default" data-edit="unlink" tooltip="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                    </div>
+                    
+                    <div class="btn-group">
+                      <a class="btn btn-default" tooltip="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                      <input type="file" data-edit="insertImage" style="position:absolute; opacity:0; width:41px; height:34px" />
+                    </div>
+                   
+                  </div>
+
+                  -->
+
+                  <section id="editor">
+                  <div id="edit2">
+
+                  <div ui-jq="wysiwyg" class="form-control" style="overflow:scroll;height: 500px; background-color:white; ">
+                      
+                      <table width="100%" border="0" cellpadding="0" background-color="#cbcbcb" cellspacing="0" align="center">
+                        <tr>
+                          <td width="100%" valign="top" background-color="#cbcbcb">
+                          <table border="0" cellpadding="0" cellspacing="0" align="center"  background-color="#402d2d">
+                            <tr>
+                              <td width="600" background-color="#402d2d">
+                                
+                                <!-- Social Icons -->
+                                <table border="0" cellpadding="0" cellspacing="0" align="left" style="background-color:#402d2d;" class="MobileErase">
+                                  <tr>
+                                    <td>
+                                      <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/social-twitter.jpg" width="40" height="43" border="0" alt="Twitter" style="display:block; border:none; outline:none; text-decoration:none; background-color:#402d2d;" />
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/social-facebook.jpg" width="40" height="43" border="0" alt="Facebook" style="display:block; border:none; outline:none; text-decoration:none; background-color:#402d2d;" />
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/social-skype.jpg" width="40" height="43" border="0" alt="Skype" style="display:block; border:none; outline:none; text-decoration:none; background-color:#402d2d;" />
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/social-google.jpg" width="40" height="43" border="0" alt="Google" style="display:block; border:none; outline:none; text-decoration:none; background-color:#402d2d;" />
+                                      </a>
+                                    </td>
+                                    <td>
+                                      <img src="tpl/files/images/social-last.jpg" width="1" height="43" border="0" alt="" style="display:block; border:none; outline:none; text-decoration:none; background-color:#402d2d;" />
+                                    </td>                     
+                                  </tr>                         
+                                </table>
+                                <!-- End of Social Icons -->
+
+                                <!-- PreHeader -->
+                                <table border="0" cellpadding="0" cellspacing="0" align="right" class="HeaderModule"  style="background-color : #a0a5a5 ;">                 
+                                  <tr>
+                                    <td height="40"  valign="middle" style="font-size:11px; color:#000; background-color:white; padding:15px; text-align:right" class="HeaderModule">
+                                      
+                                    </td>
+                                  </tr> 
+                                </table>
+                                <!-- End of PreHeader -->
+
+                                
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      </table>
+                      
+                      <div style="background-color:#e1dcdc;">
+
+                      <table width="600" border="0" cellpadding="0" cellspacing="0" align="center">
+                        <tr top=80px left=10px>
+                          
+                          
+
+                          <td width="600" height="100%" valign="top" background-color="#909090" style="color:#fffff; font-size:25px; text-align:center; top:80px; left:10px;"> <br /><p style="float:left; color:black;">Successful Subscription<br />Thank you for your subscription<br />Congratulation, <br />Welcome to our team
+                         
+                          </p>
+</div>
+                         <img src="tpl/files/images/logo.png" style="width:220px; left:10px; height:120px;"></img> &nbsp; 
+                          <table border="0" cellpadding="0" cellspacing="0" align="center">
+                            <tr>
+                           
+
+                            <td width="600" height="25" style="font-size: 25;line-height: 0;border-collapse: collapse;">&nbsp;</td></tr>
+                            <tr>
+                              <td width="600" float="left">
+                                
+
+                                <table width="560" border="0" cellpadding="0" cellspacing="0" align="center" class="MobileScale">
+                                  <tr>
+                                    <td width="100%"  style="font-size:15px; color:black; text-align:left;"> 
+                                       
+                                    You will now receive the latest updates on new arrivals, <br />exclusive deals and special promotions.
+                                      <br /><br />
+
+                                          
+
+                                      <!-- Image -->
+                                      
+                                      <!-- End of Image -->
+                                                      
+                                      <!-- Padding 20px -->
+                                      <table class="MobileErase" width="1" border="0" cellpadding="0" cellspacing="0" align="right" style="font-size: 0;line-height: 0;border-collapse: collapse;">
+                                        <tr><td width="0" height="20" style="font-size: 0;line-height: 0;border-collapse: collapse;">
+                                          <p style="padding-left: 20px;">&nbsp; </p>
+                                        </td></tr>
+                                      </table>
+                                      <!-- End of Padding 20px -->
+
+                                      <!-- Text Section -->
+                                      <table width="200" border="0" cellpadding="0" cellspacing="0" align="left" class="miResizeText2">
+                                        <tr>
+                                          <td width="100%" style="font-size: 15px; color: #ffff; text-align: left; font-weight: bold; font-family: 'Open Sans', Helvetica, Arial, sans-serif; line-height: 20px;">
+                                          
+
+                                           <div style="background-color:white; padding:15px; width:600px ; height: 320px; color:#4d3759; float:left;">
+                                           
+                    
+                                     
+                                           
+                                           
+                                           <div style="width:570px; height:290px; background-color:white; padding:5px; z-index:1; border:8px solid black; ">
+                                           
+                                          <table width="100%" style= "text-align:center;">
+                                          <tr >
+                                           
+                                           <td colspan="2" align="center" style="color:#00b7d5; padding:6px; text-align:center;"><h1>Enjoy </h1></td>
+                                           
+                                           </tr>
+                                          
+                                          <tr>
+                                         
+                                          
+                                           <td  style="color:#00b7d5; padding:6px; text-align:right;"><h1>20% OFF </h1></td>
+                                           <td  style="color:#00b7d5; padding:6px; text-align:left;"><h3> your entire <br />purchase</h3></td>
+
+
+                                           </tr>
+                                           </table>
+
+                                           <h4 style="color:black; padding:4px; line-height:30px;">&nbsp; &nbsp; &nbsp; &nbsp;Use code { xyz123 } on your next order<br />&nbsp; &nbsp; &nbsp; &nbsp;Discount offer is available upto { 1/1/2001 } </h4>
+                                           </div>
+                                           
+                                           
+                                
+
+                                          </div>
+                                          
+                                          </td>
+                                          
+                                          
+                                        </tr>
+                                        <tr><td width="100%" height="20" style="font-size: 20;line-height: 0;border-collapse: collapse;"><br />
+                                        <div align="center">
+                                          <br /><button style="background-color:#040718; color:white; padding:3px; left:300px; height:50px; align:"center"; ">SHOP NOW!</button>
+                                          <br /><br />
+
+                                          </div>
+
+
+</td></tr>
+                                        <tr>
+                                        <td align="left">
+                                        <br /><br />
+                                         Hurry up before offer lasts.<br />
+                                          Happy shopping.
+                                           <div style="float:right; background-color:white; width:160px; height:30px; padding:1px;">follow us on
+                                           <table cellpadding="10" style="float:right; cellspacing:2px; ">
+                                          <tr>
+                                          
+                                          <td>
+                                          <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/Google.png" width="25" height="20" border="0" alt="Twitter" style="display:block; border:none; outline:none; text-decoration:none; background-color:#402d2d;" />
+                                      </a>
+                                      </td>
+
+                                      <td>
+
+                                      <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/twit.png" width="25" height="20" border="1" alt="Twitter" style="display:block; outline:none; text-decoration:none; background-color:#402d2d;" />
+                                      </a>
+
+                                      </td>
+
+                                      <td>
+                                      <a href="#" target="_blank" style="text-decoration: none;">
+                                        <img src="tpl/files/images/fb.png" width="25" height="20" border="0" alt="Twitter" style="display:block; border:none; outline:none; text-decoration:none; background-color:#402d2d;" />
+                                      </a>
+
+                                       </td>
+                                       </tr>
+                                       </table>
+
+
+                                           </div>
+                                          <br />
+                                          </td>
+                                          <td>
+
+                                         
+
+                                          </td>
+                                          </tr>
+                                        <tr>
+
+                                          <td width="100%" style="font-size: 18px; color: #a6a6a6; text-align: left; font-weight: normal; font-family: 'Open Sans', Helvetica, Arial, sans-serif; line-height: 22px;">                    
+                                            {{emailContent}}<br>
+                                            {{mailLogo}}
+                                          </td>
+                                        </tr>
+                                        <tr><td width="100%" height="30" style="font-size: 30;line-height: 0;border-collapse: collapse;">&nbsp;</td></tr>
+                                      </table>
+                                </table>
+                                
+                              </td>
+                            </tr>
+                            <tr><td width="600" height="25" style="font-size: 25;line-height: 0;border-collapse: collapse;">&nbsp;
+                            
+                                        <div align="left" style="background-color:#0b0000; height:120px; width:650px; line-height:60px; padding:20px;">
+                             <h5 style="color:white; align:left; ">Terms and Conditions:<br />
+                             1) Use coupon code before expiry.<br />
+                             2) Any malpractices used may disregard your offer.<br />
+                             <br />
+                             To unsubscribe this email <span style="color:blue;">UNSUBSCRIBE</span>
+                             </h5> </div>
+                             <br />
+                                          
+                            </td></tr>        
+                          </table>
+                        </td>
+                      </tr>
+                      </table>
+
+
+
+                  </div>
+                  </div>
+           </section>
+                   <script>
+
+$(function(){
+$('#edit2').editable({
+inlineMode: false
+})
+});
+
+</script>
+                </div>
+                
+              </div>
+              
+          </div>
+
+
+        </div>
+         
+
+           
+        </div>
+        
+         </li>
+
+        </ul>
+      </div>
+         
+
+   
+      </div>
+
+       
+    </div>
+    </div>
+  </div>        
+  
+ 
+
