@@ -90,12 +90,13 @@
                   <li class="list-group-item clearfix" ng-repeat="issu in issues">
                     <span class="pull-left thumb-sm avatar m-r">
                       <img src="{{issu.user.avatar_url}}" alt="...">
-                      <i class="on b-white bottom"></i>
+                      
                     </span>
                     <span class="clear">
-                      <span>{{issu.user.login}}
-                        
+                      <span>{{issu.user.login}}                        
                       </span>
+                      <br>
+                      <small><b>{{issu.title}}</b></small>
                       <small class="text-muted clear">{{issu.body}}</small>
                     </span>
                     <span style="position:absolute; top:5px; right:10px">

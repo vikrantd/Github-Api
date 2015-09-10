@@ -12,11 +12,13 @@ $scope.till_7_days = 0;
 $scope.till_24_hours = 0;
 var url = "https://api.github.com/repos/";
 
-
-
+var issue_data = [];
+var opened_issues = [];
 // main function which retrieves the data from the api
 $scope.retrievedata = function(repo){
     
+    var issue_data = [];
+    var opened_issues = [];
     $scope.loading = "processing"; //lodaing variable that defines the current state 
     $scope.till_7_days = 0;
     $scope.till_24_hours = 0;
@@ -45,8 +47,8 @@ var get_issues = function(iteration, repo){
     
     
     
-    var issue_data = [];
-    var opened_issues = [];
+    
+    
 
     //http get request to get the issue data in JSON format
 
@@ -54,7 +56,11 @@ var get_issues = function(iteration, repo){
 
         console.log(results.data);
         iteration += 1;
-        issue_data.push(results.data); // pussing the objetcs in a temp var
+        results.data.forEach(function(entry)
+        {
+            issue_data.push(entry);
+        }); // pussing the objetcs in a temp var
+        console.log(issue_data);
         if(results.data.length==100)
         {
            get_issues(iteration , repo);
@@ -62,15 +68,13 @@ var get_issues = function(iteration, repo){
 
         else{
             $scope.loading = "done";
-            issue_data[0].forEach(function(entry) {
+            issue_data.forEach(function(entry) {
                 
                 var created_time = Date.parse(entry.created_at);
                 var _before7days = Date.parse(before7days);
             
-                
                 // Logics and conditions to get only the opened issues in last seven days
-
-                if( created_time > _before7days)
+                if( created_time > _before7days && !entry.pull_request)
                 
                 {
                     $scope.till_7_days ++ ;
@@ -84,7 +88,7 @@ var get_issues = function(iteration, repo){
                     if( created_time > _before1day)
                     {
                         $scope.till_24_hours ++ ;
-                        console.log($scope.till_24_hours);
+                        //console.log($scope.till_24_hours);
 
                     }
 
