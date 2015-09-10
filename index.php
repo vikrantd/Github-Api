@@ -71,7 +71,7 @@
   <script src="js/directives/ui-toggleclass.js"></script>
   <script src="js/directives/ui-validate.js"></script>
   <script src="js/controllers/bootstrap.js"></script>
-  <script src="js/controllers/maincontroller.js"></script>
+  
   
   
   

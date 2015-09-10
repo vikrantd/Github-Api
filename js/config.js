@@ -47,49 +47,4 @@ angular.module('app')
       }
    )};
   }])
-  .filter('dateformat', function () {
-        return function (text) {
-            console.log(text);
-            var str = text.toString();
-            console.log(str);
-            return str.slice(14,25);
-        };
-   })
-  .filter('emailfilter', function () {
-        return function (text) {
-            if(text != "")
-            {
-              var str = text.toString();
-              if(str != undefined)
-              {
-              var res = str.split("E-mail: ");
-              var res2;
-              if(res[1])
-              {
-                res2 = res[1].split("-------");
-                if(res2[0])
-                {
-                  return "E-mail: " + res2[0];
-                }
-                else return "-";
-              }
-              else return "-";
-              //console.log(res[1]);
-              //console.log(res2[0]);
-              
-              
-              }
-            }
-            else return "-";
-            
-        };
-   })
  
-  //to make contact between scope and formcontroller
-  .service('controllershake', function ControllerShake(){
-    
-    var controllershake = this;
-    
-    
-  });
-
