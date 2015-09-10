@@ -24,65 +24,79 @@ $scope.retrievedata = function(repo){
     var i= 1;
     var j = 1;
     gettotal(repo);  //function call gettotal, it gets the total number of issues and basic repository data
-    get_24_hours(i , repo); //function call get_24_hours, it gets the issues of last 24 hours 
-    get_one_to_seven_days(j , repo); //function call get_one_to_seven_Days, it gets the issues of last 7 days 
-
-
-}
-
-
-
-
-
-// get_24_hour function to get the issues of last 24 hours
-var get_24_hours = function(iteration , repo){
-
-    var date = new Date();
-    date.setDate(date.getDate()-1);
-    date = date.toISOString();
-    $http.get(url + repo + '/issues?page=' + iteration + '&per_page=100&state=open&since=' + date).then(function(results){
-
-        console.log(results.data);
-        iteration += 1;
-        $scope.till_24_hours += results.data.length ; 
-        console.log(results.data.length);
-        if(results.data.length==100)
-        {
-           get_24_hours(iteration , repo);
-
-        }
-
-
-    });
     
+    get_issues(j , repo); //function call get issues data, it gets the issues of last 7 days 
+
 
 }
 
 
 
-// get_one_to_seven_days function to get the issues of last 7 days, name of the function s confusing but it takes the data from beginning to seven days
 
-var get_one_to_seven_days = function(iteration, repo){
 
-    var date = new Date();
-    date.setDate(date.getDate()-7);
-    date = date.toISOString();
+// get_issues function to get the issues of last 7 days
+
+var get_issues = function(iteration, repo){
+
+    var before7days = new Date();
+    before7days.setDate(before7days.getDate()-7);
+    before7days = before7days.toISOString();  //converting the date to iso string to pass it to the api 
+
+    
+    
+    
     var issue_data = [];
-    $http.get(url + repo + '/issues?page=' + iteration + '&per_page=100&state=open&since=' + date).then(function(results){
+    var opened_issues = [];
+
+    //http get request to get the issue data in JSON format
+
+    $http.get(url + repo + '/issues?page=' + iteration + '&per_page=100&state=open&since=' + before7days).then(function(results){
 
         console.log(results.data);
         iteration += 1;
         issue_data.push(results.data); // pussing the objetcs in a temp var
-        $scope.till_7_days += results.data.length ;
         if(results.data.length==100)
         {
-           get_one_to_seven_days(iteration , repo);
-
+           get_issues(iteration , repo);
         }
+
         else{
             $scope.loading = "done";
-            $scope.issues = issue_data; // taking all objects to the scope so that we can display the issues
+            issue_data[0].forEach(function(entry) {
+                
+                var created_time = Date.parse(entry.created_at);
+                var _before7days = Date.parse(before7days);
+            
+                
+                // Logics and conditions to get only the opened issues in last seven days
+
+                if( created_time > _before7days)
+                
+                {
+                    $scope.till_7_days ++ ;
+
+                    var before1day = new Date();
+                    before1day.setDate(before1day.getDate()-1);
+                    var _before1day = Date.parse(before1day);
+                    
+                    opened_issues.push(entry);
+
+                    if( created_time > _before1day)
+                    {
+                        $scope.till_24_hours ++ ;
+                        console.log($scope.till_24_hours);
+
+                    }
+
+                }
+
+                
+            }); 
+
         }
+        
+        $scope.issues = opened_issues;
+        console.log(opened_issues);
 
     });
     

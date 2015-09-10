@@ -84,10 +84,10 @@
               <div class="panel b-a">
                 <div class="panel-heading b-b b-light">
                   <span class="badge bg-warning pull-right">{{issues.data.length}}</span>
-                  <a href class="font-bold">Issues (Last 7 Days)</a>
+                  <a href class="font-bold">Issues (Opened in Last 7 Days)</a>
                 </div>
-                <ul class="list-group list-group-lg no-bg auto" ng-repeat="issue in issues">
-                  <li class="list-group-item clearfix" ng-repeat="issu in issue">
+                <ul class="list-group list-group-lg no-bg auto" >
+                  <li class="list-group-item clearfix" ng-repeat="issu in issues">
                     <span class="pull-left thumb-sm avatar m-r">
                       <img src="{{issu.user.avatar_url}}" alt="...">
                       <i class="on b-white bottom"></i>
@@ -99,7 +99,7 @@
                       <small class="text-muted clear">{{issu.body}}</small>
                     </span>
                     <span style="position:absolute; top:5px; right:10px">
-                       <small class="text-muted clear">{{issu.updated_at}}</small>
+                       <small class="text-muted clear">{{issu.created_at | date}}</small>
                     </span>
                   </li>
                   
