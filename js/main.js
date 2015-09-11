@@ -10,6 +10,7 @@ app.controller('AppCtrl', function(  $scope,  $http ) {
 // declaring all variables to 0
 $scope.till_7_days = 0;
 $scope.till_24_hours = 0;
+$scope.pulls = 0;
 var url = "https://api.github.com/repos/";
 
 var issue_data = [];
@@ -22,13 +23,14 @@ $scope.retrievedata = function(repo){
     $scope.loading = "processing"; //lodaing variable that defines the current state 
     $scope.till_7_days = 0;
     $scope.till_24_hours = 0;
+    $scope.pulls = 0;
     
     var i= 1;
     var j = 1;
     gettotal(repo);  //function call gettotal, it gets the total number of issues and basic repository data
     
     get_issues(j , repo); //function call get issues data, it gets the issues of last 7 days 
-
+    getpulls(i , repo);
 
 }
 
@@ -107,8 +109,26 @@ var get_issues = function(iteration, repo){
 
 }
 
+//function to gt the number of pulls so that we can minus it from the pulls  to get the exact number.
+var getpulls = function(iteration, repo){
 
 
+    $http.get(url + repo + '/pulls?page=' + iteration + '&per_page=100').then(function(results){
+
+        
+        iteration += 1;
+        $scope.pulls += results.data.length;
+        console.log($scope.pulls);
+        if(results.data.length==100)
+        {
+           get_issues(iteration , repo);
+        }
+
+
+    });
+    
+
+}
 //function to get basic data about repo and total number of issues
 var gettotal = function(repo){
 

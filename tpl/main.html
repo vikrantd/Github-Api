@@ -65,13 +65,13 @@
                   </div>
                   <div class="col-xs-3">
                     <div class="wrapper">
-                      <span class="m-b-xs h3 block text-white">{{repo.open_issues_count - till_7_days}}</span>
+                      <span class="m-b-xs h3 block text-white">{{repo.open_issues_count - till_7_days - pulls}}</span>
                       <small class="text-muted">Beyond 7 days</small>
                     </div>
                   </div>
                    <div class="col-xs-3">
                     <div class="wrapper">
-                      <span class="m-b-xs h3 block text-white">{{repo.open_issues_count}}</span>
+                      <span class="m-b-xs h3 block text-white">{{repo.open_issues_count - pulls}}</span>
                       <small class="text-muted">Total</small>
                     </div>
                   </div>
