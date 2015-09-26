@@ -140,7 +140,7 @@ var getpulls = function(iteration, repo){
         console.log($scope.data.pulls);
         if(results.data.length==100)
         {
-           get_issues(iteration , repo);
+           get_pulls(iteration , repo);
         }
 
 
